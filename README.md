@@ -30,7 +30,7 @@ const StudentSchema = new Schema({
 * Use [CORS](https://www.npmjs.com/package/cors) middleware, to allow CORS requests.
 * Use [Helmet](https://www.npmjs.com/package/helmet) middleware, to add security headers to your response.
   
-To send a file over HTTP, you will need to send a `multipart/form-data` request. You may either use [Postman](https://www.postman.com/) or use the provided [REST Client test file](./test.http).
+To send a file over HTTP, you will need to send a `multipart/form-data` request. You may either use [Postman](https://www.postman.com/) or use the provided [REST Client test file](./test.http) which is configured to upload the [Puppy](./image.jpeg) image.
   
 Create a Rest API to perform the following operations on files:
 * Upload a new file and save the file details in DB. (use multer `.single(FILE_FORM_NAME)`)
