@@ -24,16 +24,16 @@ const StudentSchema = new Schema({
     deleted: { type: Boolean, default: false }
 }, { timestamps: true });
 ```
-To send a file over HTTP, you will need to send a `multipart/form-data` request. You may either use [Postman](https://www.postman.com/) or use the provided [REST Client test file](./test.http).
-  
-Create a Rest API to perform the following operations on files:
-* Upload a new file and save the file details in DB.
-* Get the document details by `_id`.
-* Download a file by `_id`, when a query parameter `?download=true` is passed. (use `response.download()`)
-* Delete the file by `_id` from DB and file system. (use `fs.unlink()`)
-  
-**Notes:**
+
+**Install and use the following middlewares to your application:**
 * Use [Multer](https://www.npmjs.com/package/multer) middleware, to upload files.
 * Use [CORS](https://www.npmjs.com/package/cors) middleware, to allow CORS requests.
 * Use [Helmet](https://www.npmjs.com/package/helmet) middleware, to add security headers to your response.
-
+  
+To send a file over HTTP, you will need to send a `multipart/form-data` request. You may either use [Postman](https://www.postman.com/) or use the provided [REST Client test file](./test.http).
+  
+Create a Rest API to perform the following operations on files:
+* Upload a new file and save the file details in DB. (use multer `.single(FILE_FORM_NAME)`)
+* Get the document details by `_id`.
+* Download a file by `_id`, when a query parameter `?download=true` is passed. (use `response.download()`)
+* Delete the file by `_id` from DB and file system. (use `fs.unlink()`)
