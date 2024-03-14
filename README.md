@@ -32,7 +32,7 @@ const StudentSchema = new Schema({
   
 To send a file over HTTP, you will need to send a `multipart/form-data` request. You may either use [Postman](https://www.postman.com/) or use the provided [REST Client test file](./test.http) which is configured to upload the [Puppy](./image.jpeg) image.
   
-Create a Rest API to perform the following operations on files:
+**Create a Rest API to perform the following operations on files:**
 * Upload a new file and save the file details in DB. (use multer `.single(FILE_FORM_NAME)`)
 * Get the document details by `_id`.
 * Download a file by `_id`, when a query parameter `?download=true` is passed. (use `response.download()`)
