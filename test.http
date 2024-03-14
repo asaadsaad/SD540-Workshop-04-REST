@@ -1,0 +1,23 @@
+@STUDENT_ID=5c7f3e3e3f3e3e3e3e3e3e3e
+@FILENAME=image.jpeg
+@FILE_FORM_NAME=myfile
+@FILE_MIME_TYPE=image/jpeg
+@FILE_ID=5c7f3e3e3f3e3e3e3e3e3e3e
+###
+POST http://localhost:3000/students/{{STUDENT_ID}}/files
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="{{FILE_FORM_NAME}}"; filename="{{FILENAME}}"
+Content-Type: {{FILE_MIME_TYPE}}
+
+< ./{{FILENAME}}
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+GET http://localhost:3000/students/{{STUDENT_ID}}/files/{{FILE_ID}}
+
+###
+GET http://localhost:3000/students/{{STUDENT_ID}}/files/{{FILE_ID}}?download=true
+
+###
+DELETE http://localhost:3000/students/{{STUDENT_ID}}/files/{{FILE_ID}}
