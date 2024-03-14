@@ -1,7 +1,7 @@
 ### SD540-Workshop-04-REST
 Add another Schema to the previous homework and upload the student files as follows:
 ```typescript
-// Files schema:
+// File schema:
 const FileSchema = new Schema({
     originalname: { type: String, required: true },
     mimetype: { type: String, required: true },
