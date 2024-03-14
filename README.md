@@ -6,8 +6,7 @@ const FileSchema = new Schema({
     originalname: { type: String, required: true },
     mimetype: { type: String, required: true },
     path: { type: String, required: true },
-    size: { type: Number, required: true },
-    deleted: { type: Boolean, default: false }
+    size: { type: Number, required: true }
 }, { timestamps: true });
 
 const CourseSchema = new Schema({
@@ -26,9 +25,10 @@ const StudentSchema = new Schema({
 }, { timestamps: true });
 ```
 Create a Rest API to perform the following operations on files:
-* Upload a new file
-* Download a file by `_id`
-* Mark a file as deleted
+* Upload a new file and save the file details in DB.
+* Get the document details by `_id`.
+* Download a file by `_id`, when a query parameter `?download=true` is passed.
+* Delete the file by `_id` from DB and file system.
   
 **Notes:**
 * Use [Multer](https://www.npmjs.com/package/multer) middleware, to upload files.
